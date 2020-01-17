@@ -17,15 +17,15 @@ We are going to make 3 pages: `<Login /> <Signup />` and `<Profile />`. We are a
 ```
 For sake of simplicity the scss files are disregarded. The  <a href="https://github.com/Piepongwong/react-auth-client-only">final example code </a> is making use of bulma.
 
-There're are 3 main differences between authentication with React and how we did it in module 2 (traditional web apps).
+There're are 3 main differences between authentication with React and how we did it in module 2 (traditional web apps):
 
 1. We have to keep some session data of the user on the client. This will allow us to make, for example, a personalized navbar with the users name in it. There're several techniques to do that. This lesson is going to use localStorage.
 2. We are sending the signup and login data to the backend with axios instead of making use of the default behaviour of forms.
-3. Nowadays the client and the backend are often hosted on different servers. Therefore you can get a lot of CORS errors. We will deal with that by enabling CORS on the front-end. When you're going to create your're own back-end, you need to enable there as well. 
+3. Nowadays the client and the backend are often hosted on different servers. Therefore you can get a lot of CORS errors. We will deal with that by enabling CORS on the front-end. When you're going to create your own back-end, you need to enable there as well. 
 
 Let's get to it!
 
-The code snippets highlight areas that are different from React code we've seen previously. Code that is essentially the same as code we covered previously is left out. Code that is left out is indicated by '...'. For example, in the signup code snippet all the input fields with the onChange eventhandlers are left out. It's also not shown how we're navigating between pages. If you do want to see that code, please check <a href="https://github.com/Piepongwong/react-auth-client-only"> the final example code</a>. This repo does not include a login form or a decent profile page. Those are left up to you. The approach is identitical.
+The code snippets highlight areas that are different from React code we've seen previously. Code that is essentially the same as code we covered previously is left out. Code that is left out is indicated by '...'. For example, in the signup code snippet all the input fields with the onChange eventhandlers are left out. It's also not shown how we're navigating between pages. If you do want to see that code, please check <a href="https://github.com/Piepongwong/react-auth-client-only"> the final example code</a>. This repo does not include a login form or a decent profile page. Those are left up to you. The approach is identical.
 
 /pages/Signup.js
 ```
@@ -43,7 +43,7 @@ The code snippets highlight areas that are different from React code we've seen 
         */
 
         signup(this.state.user)
-        .then((reponse)=> {
+        .then((response)=> {
             this.setState({
                 error: null
             }, ()=> {
@@ -63,7 +63,7 @@ The code snippets highlight areas that are different from React code we've seen 
 
 ```
 
-We don't want to have our auth logic scattered around all over the place. We also want to prevent code duplication, but even more importantly: we want to have a separation of concerns. React components are primarily intented to handle the VIEWS, not the app logic.
+We don't want to have our auth logic scattered around all over the place. We also want to prevent code duplication, but even more importantly: we want to have a separation of concerns. React components are primarily intended to handle the VIEWS, not the app logic.
 
 /utils/auth.js
 ```
