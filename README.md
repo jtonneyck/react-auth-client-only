@@ -19,9 +19,9 @@ For sake of simplicity the scss files are disregarded. The  <a href="https://git
 
 There're are 3 main differences between authentication with React and how we did it in module 2 (traditional web apps).
 
-    1. We have to keep some session data of the user on the client. This will allow us to make, for example, a personalized navbar with the users name in it. There're several techniques to do that. This lesson is going to use localStorage.
-    2. We are sending the signup and login data to the backend with axios instead of making use of the default behaviour of forms.
-    3. Nowadays the client and the backend are often hosted on different servers. Therefore you can get a lot of CORS errors. We will deal with that by enabling CORS on the front-end. When you're going to create your're own back-end, you need to enable there as well. 
+1. We have to keep some session data of the user on the client. This will allow us to make, for example, a personalized navbar with the users name in it. There're several techniques to do that. This lesson is going to use localStorage.
+2. We are sending the signup and login data to the backend with axios instead of making use of the default behaviour of forms.
+3. Nowadays the client and the backend are often hosted on different servers. Therefore you can get a lot of CORS errors. We will deal with that by enabling CORS on the front-end. When you're going to create your're own back-end, you need to enable there as well. 
 
 Let's get to it!
 
