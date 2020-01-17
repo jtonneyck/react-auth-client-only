@@ -109,5 +109,19 @@ We don't want to have our auth logic scattered around all over the place. We als
         return JSON.parse(window.localStorage.getItem("user"));
 }
 ```
-
 This file should also contain a logout function and fetchUser function.
+
+```
+import React from 'react';
+import {Link} from "react-router-dom";
+import {getUser} from "../utils/auth";
+/* 
+    now we can use the getUser function to personalize our navbar
+    if there's no user, you have to show links to the signup and login page
+    otherwise you have to show a link to the profile page and logout
+*/
+const Navbar = () => {
+    let user = getUser()
+
+    return ...
+```

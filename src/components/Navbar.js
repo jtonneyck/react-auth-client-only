@@ -16,7 +16,7 @@ const Navbar = () => {
                                     <Link className="navbar-item" to="/auth/logout">
                                         logout
                                     </Link>
-                                    <Link className="navbar-item" to="/auth/profile">
+                                    <Link className="navbar-item" to="/user/profile">
                                         profile
                                     </Link>
                                 </div>
