@@ -2,7 +2,7 @@
 
 Authentication with react works a bit differently than with traditional web applications, especially on the client side. The backend-end stays largely the same. During this lesson and the lab we are fully going to focus on the client side. We'll use an api that also provides auth routes. You can find the documentation of that api <a href="https://ih-beers-api.herokuapp.com">here</a>. This is a different beer api than the previous one! Make really sure that you are using the right one.
 
-We are going to make 3 pages: `<Login /> <Signup />` and `<Profile />`. We are also going to make a utilities directory with an auth.js file. auth.js is going to handle all our authentication logic on the front-end. It's in this file where the meat of the lesson is. The file structure of our project is going to be as follows:
+We are going to make 3 pages: `<Login /> <Signup />` and `<Profile />`. We are also going to make an utilities directory with an auth.js file. auth.js is going to handle all our authentication logic on the front-end. It's in this file where the meat of the lesson is. The file structure of our project is going to be as follows:
 ```
 -src
     -components
@@ -15,23 +15,25 @@ We are going to make 3 pages: `<Login /> <Signup />` and `<Profile />`. We are a
         auth.js
     App.js
 ```
-For sake of simplicity the scss files are disregarded. The final example code is making use of bulma.
+For sake of simplicity the scss files are disregarded. The  <a href="https://github.com/Piepongwong/react-auth-client-only">final example code </a> is making use of bulma.
 
 There're are 3 main differences between authentication with React and how we did it in module 2 (traditional web apps).
 
-    1. We have to keep some session data of the user on the client. This will allow us to make, for example, a personalized navbar with the users name in it. There're several techniques to do that. This lesson is going to use localstorage.
+    1. We have to keep some session data of the user on the client. This will allow us to make, for example, a personalized navbar with the users name in it. There're several techniques to do that. This lesson is going to use localStorage.
     2. We are sending the signup and login data to the backend with axios instead of making use of the default behaviour of forms.
     3. Nowadays the client and the backend are often hosted on different servers. Therefore you can get a lot of CORS errors. We will deal with that by enabling CORS on the front-end. When you're going to create your're own back-end, you need to enable there as well. 
 
 Let's get to it!
 
-The code snippets highlight areas that are different from React code we've seen previously. Code that is essentially the same as previous code we covered is left out. Code that is left out is indicated by '...'. In the signup code snippe all the input fields with the onChange eventhandlers are for example left out. It's also not shown how we're navigating between pages. If you do want to see that code, please checkout <a href="https://github.com/Piepongwong/react-auth-client-only"> this repo </a>. This repo does not include a login form or a decent profile page. Those are left up to you.
+The code snippets highlight areas that are different from React code we've seen previously. Code that is essentially the same as code we covered previously is left out. Code that is left out is indicated by '...'. For example, in the signup code snippet all the input fields with the onChange eventhandlers are left out. It's also not shown how we're navigating between pages. If you do want to see that code, please check <a href="https://github.com/Piepongwong/react-auth-client-only"> the final example code</a>. This repo does not include a login form or a decent profile page. Those are left up to you. The approach is identitical.
 
 /pages/Signup.js
 ```
     import React, { Component } from 'react' 
     import {signup} from "../utils/auth";
-    /* see next code snippet to find out how this works */
+    /* 
+        see the /utils/auth code snippet to find out how this works 
+    */
     ...
 
     handleSignupClick(){
@@ -109,7 +111,7 @@ We don't want to have our auth logic scattered around all over the place. We als
         return JSON.parse(window.localStorage.getItem("user"));
 }
 ```
-This file should also contain a logout function and fetchUser function.
+This file should also contain a logout function and fetchUser function. Those are left up to you
 
 ```
 import React from 'react';
@@ -120,7 +122,7 @@ import {getUser} from "../utils/auth";
     if there's no user, you have to show links to the signup and login page
     otherwise you have to show a link to the profile page and logout
 */
-const Navbar = () => {
+const Navbar = (props) => {
     let user = getUser()
 
     return ...

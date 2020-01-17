@@ -3,13 +3,11 @@ import qs from "qs";
 
 const axios = Axios.create({
     baseURL: 'https://ih-beers-api.herokuapp.com/auth/',
-    timeout: 1000,
     withCredentials: true,
     headers: { 'content-type': 'application/x-www-form-urlencoded' }
   });
 
 export const signup = (user)=>{
-    debugger
     return axios({
         method: "POST",
         url: "signup",

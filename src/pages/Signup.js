@@ -32,7 +32,6 @@ export default class Signup extends Component {
     handleSignupClick(){
         signup(this.state.user)
         .then((reponse)=> {
-           
             this.setState({
                 error: null
             }, ()=> {
@@ -40,7 +39,6 @@ export default class Signup extends Component {
             })
         })
         .catch((error)=> {
-            debugger
             this.setState({error: error.response && error.response.data})
         })
     }
