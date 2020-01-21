@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {getUser} from "../utils/auth";
-
+import {Fragment} from "react";
 const Navbar = () => {
     let user = getUser()
     return (
-        <div>
+        <Fragment>
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div id="navbarBasicExample" class="navbar-menu">
                             {user ?
@@ -35,7 +35,7 @@ const Navbar = () => {
                             }
                 </div>
             </nav>
-        </div>
+        </Fragment>
     );
 }
 

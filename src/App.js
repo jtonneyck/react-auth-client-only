@@ -3,7 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import {Route} from "react-router-dom";
 import Signup from "./pages/Signup";
+
 import Profile from "./pages/Profile";
+import Home from "./pages/Home";
 
 import Navbar from "./components/Navbar";
 
@@ -11,6 +13,7 @@ function App() {
   return (
     <div className="App">
 
+      <Route exact path="/" component={Home} />
       <Route exact path="/auth/signup" component={Signup} />
       <Route exact path="/user/profile" component={Profile} />
 

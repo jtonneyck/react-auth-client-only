@@ -44,6 +44,7 @@ export default class Signup extends Component {
     }
 
     render() {
+        debugger
         return (
         <DefaultLayout>
             <Form>
