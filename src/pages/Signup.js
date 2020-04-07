@@ -31,7 +31,7 @@ export default class Signup extends Component {
 
     handleSignupClick(){
         signup(this.state.user)
-        .then((reponse)=> {
+        .then(()=> {
             this.setState({
                 error: null
             }, ()=> {

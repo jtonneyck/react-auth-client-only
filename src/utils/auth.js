@@ -8,9 +8,22 @@ const axios = Axios.create({
   });
 
 export const signup = (user)=>{
+    debugger
     return axios({
         method: "POST",
         url: "signup",
+        data: qs.stringify(user)
+    })
+    .then((response)=> {
+        setUser(response.data);
+    })
+    
+}
+
+export const login = (user)=>{
+    return axios({
+        method: "POST",
+        url: "login",
         data: qs.stringify(user)
     })
     .then((response)=> {
