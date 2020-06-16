@@ -8,6 +8,7 @@ const axios = Axios.create({
   });
 
 export const signup = (user)=>{
+    debugger
     return axios({
         method: "POST",
         url: "signup",
@@ -16,7 +17,19 @@ export const signup = (user)=>{
     .then((response)=> {
         setUser(response.data);
     })
-    // don't forget to catch the error wherever you import his function
+
+    // don't forget to catch the error wherever you import his function    
+}
+
+export const login = (user)=>{
+    return axios({
+        method: "POST",
+        url: "login",
+        data: qs.stringify(user)
+    })
+    .then((response)=> {
+        setUser(response.data);
+    })
 }
 
 export const logout = ()=> {
