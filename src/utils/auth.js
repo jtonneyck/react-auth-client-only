@@ -26,6 +26,9 @@ export const logout = ()=> {
     // redirect in component
 }
 
+export const userIsLoggedIn = ()=> getUser()? true:false; 
+
+
 export const setUser = (user)=> {
     window.localStorage.setItem("user", JSON.stringify(user));
 }
