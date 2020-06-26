@@ -12,5 +12,4 @@ export const getMyBeers = ()=> {
         method: "GET",
         url: "user/my-beers"
     })
-
 }
