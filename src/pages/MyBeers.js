@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {getMyBeers} from "../utils/beer";
+import Default from "../layout/Default";
 
 class MyBeers extends Component {
     constructor(props) {
@@ -22,13 +23,15 @@ class MyBeers extends Component {
 
     render() {
         return (
-            <div>
+            <Default>
                 {
                     this.state.beers ? 
-                        this.state.beers.map((beer)=> <h1>{beer.name}</h1>):
-                        <h1>Loading...</h1>
+                        this.state.beers.length === 0? 
+                            <h1>You didn't create any beers yet.</h1>:
+                            this.state.beers.map((beer)=> <h1>{beer.name}</h1>)
+                        :<h1>Loading...</h1>
                 }
-            </div>
+            </Default>
         )
     }
 }

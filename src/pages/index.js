@@ -15,6 +15,3 @@ export {
     Logout,
     MyBeers
 }
-
-// export const Home = Home;
-// export const Login = Login;

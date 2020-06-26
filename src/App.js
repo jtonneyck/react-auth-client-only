@@ -1,10 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Route, Redirect, Switch} from "react-router-dom";
-import {getUser} from "./utils/auth";
 import ProtectRoute from "./components/ProtectRoute";
-import defaultCOmponent, {Signup, Logout, Profile, Login, Home, PageNotFound, MyBeers} from "./pages";
+import {Signup, Logout, Profile, Login, Home, PageNotFound, MyBeers} from "./pages";
 
 function App() {
   return (
@@ -20,10 +18,9 @@ function App() {
           {/* <Route exact path="/user/profile" component={Profile}/> */}
 
           
-          {/* 'advanced' route protection with reuseable component*/}
+        {/* 'advanced' route protection with reuseable component*/}
         <ProtectRoute path="/user/profile" redirectTo="/" component={Profile}/>
-        <ProtectRoute path="/user/friends" redirectTo="/youdonthaveanyfriends" component={Profile}/>
-        <ProtectRoute path="/user/my-beers" redirectTo="/youdonthaveanyfriends" component={MyBeers}/>
+        <ProtectRoute path="/user/my-beers" redirectTo="/" component={MyBeers}/>
 
         <Route path="/auth/login" component={Login} /> 
         <Route path="/auth/logout" component={Logout} /> 
