@@ -1,5 +1,7 @@
 import Axios from "axios";
 import qs from "qs";
+Axios.defaults.withCredentials = true
+
 
 const axios = Axios.create({
     baseURL: 'https://ih-beers-api.herokuapp.com/auth/',
@@ -8,7 +10,6 @@ const axios = Axios.create({
   });
 
 export const signup = (user)=>{
-    debugger
     return axios({
         method: "POST",
         url: "signup",
@@ -18,7 +19,7 @@ export const signup = (user)=>{
         setUser(response.data);
     })
 
-    // don't forget to catch the error wherever you import his function    
+    // don't forget to catch the error wherever you import this function    
 }
 
 export const login = (user)=>{
@@ -33,10 +34,15 @@ export const login = (user)=>{
 }
 
 export const logout = ()=> {
-    // todo
-    // log out on server using axios
-    // if success call clearUser
-    // redirect in component
+    return axios
+    .get("/logout")
+        .then(()=> {
+            clearUser();
+        })
+}
+
+export const clearUser = ()=> {
+    window.localStorage.removeItem("user");
 }
 
 export const userIsLoggedIn = ()=> getUser()? true:false; 
@@ -44,10 +50,6 @@ export const userIsLoggedIn = ()=> getUser()? true:false;
 
 export const setUser = (user)=> {
     window.localStorage.setItem("user", JSON.stringify(user));
-}
-
-export const clearUser = ()=> {
-    // remove user from local storage
 }
 
 export const getUser = (user)=> {

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {getUser} from "../utils/auth";
 import {Fragment} from "react";
 const Navbar = () => {
-    let user = getUser()
+    let user = getUser();
     return (
         <Fragment>
             <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -19,6 +19,9 @@ const Navbar = () => {
                                     <Link className="navbar-item" to="/user/profile">
                                         profile
                                     </Link>
+                                    <Link className="navbar-item" to="/user/my-beers">
+                                        my beers
+                                    </Link>
                                 </div>
                                 :
                                 <div class="navbar-end">
@@ -28,7 +31,7 @@ const Navbar = () => {
                                     <Link className="navbar-item" to="/auth/login">
                                         Login
                                     </Link>
-                                    <Link className="navbar-item" to="/auth/home">
+                                    <Link className="navbar-item" to="/home">
                                         Home
                                     </Link>
                                 </div>

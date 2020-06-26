@@ -4,7 +4,7 @@ import DefaultLayout from "../layout/Default";
 const Home = () => {
     return (
         <DefaultLayout>
-            <h1>Welcomeeee to my apo</h1>
+            <h1>Welcomeeee to my app!</h1>
         </DefaultLayout>
     );
 }

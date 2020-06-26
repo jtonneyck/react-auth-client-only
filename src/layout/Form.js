@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Form.scss";
 
-const Form = (props) => {
+export const Form = (props) => {
     return (
         <div className="form">
             {props.children}

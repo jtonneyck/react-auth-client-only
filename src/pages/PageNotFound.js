@@ -4,7 +4,7 @@ import DefaultLayout from "../layout/Default";
 const PageNotFound = () => {
     return (
         <DefaultLayout>
-            <h1>Page not found suckeeeeer!</h1>
+            <h1>Page not found!</h1>
         </DefaultLayout>
     );
 }
