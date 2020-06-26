@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import {Route, Redirect, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
+// import {Redirect} from "react-router-dom";
 import ProtectRoute from "./components/ProtectRoute";
 import {Signup, Logout, Profile, Login, Home, PageNotFound, MyBeers} from "./pages";
 
